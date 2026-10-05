@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shape Switch</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="logo">ShapeSwitch</div>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#shapes">Shapes</a>
+        <a href="#studio">Studio</a>
+        <a href="#random" onclick="randomShape()">Random Shape</a>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="small-title">INTERACTIVE SHAPE STUDIO</p>
+
+        <h1>
+          Choose.<br />
+          Change.<br />
+          Create.
+        </h1>
+
+        <p class="hero-text">
+          Explore different shapes, change their colors, resize them, rotate
+          them and watch them transform.
+        </p>
+
+        <button onclick="openStudio()" class="primary-btn">
+          Explore Shapes
+        </button>
+      </div>
+
+      <div class="hero-shape">
+        <div class="floating-shape"></div>
+      </div>
+    </section>
+
+    <!-- SHAPE LIBRARY -->
+    <section class="shape-section" id="shapes">
+      <div class="section-heading">
+        <p class="small-title">SHAPE LIBRARY</p>
+        <h2>Pick your shape.</h2>
+        <p>Select a shape and start experimenting with it.</p>
+      </div>
+
+      <div class="shape-grid">
+        <button
+          class="shape-card active"
+          onclick="selectShape('circle', 'Circle')"
+        >
+          <span class="shape-icon circle"></span>
+          <span>Circle</span>
+        </button>
+
+        <button
+          class="shape-card"
+          onclick="selectShape('triangle', 'Triangle')"
+        >
+          <span class="shape-icon triangle"></span>
+          <span>Triangle</span>
+        </button>
+
+        <button class="shape-card" onclick="selectShape('square', 'Square')">
+          <span class="shape-icon square"></span>
+          <span>Square</span>
+        </button>
+
+        <button
+          class="shape-card"
+          onclick="selectShape('rectangle', 'Rectangle')"
+        >
+          <span class="shape-icon rectangle"></span>
+          <span>Rectangle</span>
+        </button>
+
+        <button
+          class="shape-card"
+          onclick="selectShape('pentagon', 'Pentagon')"
+        >
+          <span class="shape-icon pentagon"></span>
+          <span>Pentagon</span>
+        </button>
+
+        <button class="shape-card" onclick="selectShape('hexagon', 'Hexagon')">
+          <span class="shape-icon hexagon"></span>
+          <span>Hexagon</span>
+        </button>
+
+        <button class="shape-card" onclick="selectShape('diamond', 'Diamond')">
+          <span class="shape-icon diamond"></span>
+          <span>Diamond</span>
+        </button>
+
+        <button class="shape-card" onclick="selectShape('star', 'Star')">
+          <span class="shape-icon star">★</span>
+          <span>Star</span>
+        </button>
+
+        <button
+          class="shape-card"
+          onclick="selectShape('broken-heart', 'Broken Heart')"
+        >
+          <span class="shape-icon broken-heart">💔</span>
+          <span>Broken Heart</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- STUDIO -->
+    <section class="studio-section" id="studio">
+      <div class="studio-left">
+        <p class="small-title">THE STUDIO</p>
+
+        <h2>
+          Make it<br />
+          yours.
+        </h2>
+
+        <p class="studio-description">
+          Change the appearance of your selected shape using the controls.
+        </p>
+
+        <div class="selected-info">
+          <span>SELECTED SHAPE</span>
+          <h3 id="selectedShape">Circle</h3>
+        </div>
+      </div>
+
+      <div class="studio-card">
+        <div class="preview-area">
+          <div id="previewShape" class="preview-shape circle"></div>
+        </div>
+
+        <div class="controls">
+          <div class="control">
+            <label>Color</label>
+
+            <input
+              type="color"
+              id="colorPicker"
+              value="#68ef3f"
+              onchange="changeColor()"
+            />
+          </div>
+
+          <div class="control">
+            <label>
+              Size
+              <span id="sizeValue">180</span>px
+            </label>
+
+            <input
+              type="range"
+              id="sizeSlider"
+              min="80"
+              max="300"
+              value="180"
+              oninput="changeSize()"
+            />
+          </div>
+
+          <div class="control">
+            <label>
+              Rotation
+              <span id="rotationValue">0</span>°
+            </label>
+
+            <input
+              type="range"
+              id="rotationSlider"
+              min="0"
+              max="360"
+              value="0"
+              oninput="changeRotation()"
+            />
+          </div>
+        </div>
+
+        <div class="studio-buttons">
+          <button onclick="morphShape()" class="morph-btn">Morph Shape</button>
+
+          <button onclick="randomShape()" class="random-btn">Random</button>
+
+          <button onclick="resetShape()" class="reset-btn">Reset</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- HEART TRANSFORMATION -->
+    <section class="heart-section">
+      <div class="heart-content">
+        <p class="small-title">SPECIAL TRANSFORMATION</p>
+
+        <h2>
+          Even a broken<br />
+          shape can change.
+        </h2>
+
+        <p>Select the broken heart and watch it transform into a red heart.</p>
+
+        <button onclick="transformHeart()" class="heart-btn">
+          💔 Heal the Heart
+        </button>
+      </div>
+
+      <div class="heart-display">
+        <div id="heartShape" class="broken-heart-large">💔</div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-logo">ShapeSwitch</div>
+
+      <p>Choose. Change. Create.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

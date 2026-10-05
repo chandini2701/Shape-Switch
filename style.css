@@ -1,0 +1,640 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #07140c;
+  color: white;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  width: 100%;
+  padding: 24px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #07140c;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  color: #68ef3f;
+}
+
+/* ================= COMMON ================= */
+
+.small-title {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #68ef3f;
+  margin-bottom: 18px;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  min-height: 650px;
+  padding: 90px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: clamp(65px, 9vw, 125px);
+  line-height: 0.86;
+  letter-spacing: -7px;
+  margin-bottom: 35px;
+}
+
+.hero-text {
+  max-width: 470px;
+  color: #b9c5bb;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.primary-btn {
+  border: none;
+  background: #68ef3f;
+  color: #07140c;
+  padding: 15px 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* START / HERO SHAPE */
+
+.hero-shape {
+  width: 380px;
+  height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.floating-shape {
+  width: 260px;
+  height: 260px;
+  background: #68ef3f;
+  border-radius: 50%;
+  display: block;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-25px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ================= SHAPE LIBRARY ================= */
+
+.shape-section {
+  background: #eef5e9;
+  color: #102318;
+  padding: 100px 7%;
+}
+
+.section-heading {
+  margin-bottom: 50px;
+}
+
+.section-heading h2 {
+  font-size: clamp(45px, 7vw, 80px);
+  letter-spacing: -4px;
+  margin-bottom: 15px;
+}
+
+.section-heading > p:last-child {
+  color: #607064;
+}
+
+/* ================= SHAPE CARDS ================= */
+
+.shape-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.shape-card {
+  border: none;
+  background: white;
+  min-height: 190px;
+  border-radius: 22px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  cursor: pointer;
+  color: #102318;
+  font-size: 15px;
+  font-weight: bold;
+  box-shadow: 0 10px 30px rgba(20, 50, 30, 0.08);
+  transition: 0.3s;
+}
+
+.shape-card:hover {
+  transform: translateY(-6px);
+}
+
+.shape-card.active {
+  outline: 3px solid #68ef3f;
+}
+
+/* ================= CARD SHAPES ================= */
+
+.shape-icon.circle {
+  width: 70px;
+  height: 70px;
+  background: #68ef3f;
+  border-radius: 50%;
+}
+
+.shape-icon.triangle {
+  width: 0;
+  height: 0;
+  background: transparent;
+  border-left: 38px solid transparent;
+  border-right: 38px solid transparent;
+  border-bottom: 70px solid #68ef3f;
+}
+
+.shape-icon.square {
+  width: 70px;
+  height: 70px;
+  background: #68ef3f;
+  border-radius: 8px;
+}
+
+.shape-icon.rectangle {
+  width: 90px;
+  height: 60px;
+  background: #68ef3f;
+  border-radius: 8px;
+}
+
+.shape-icon.pentagon {
+  width: 70px;
+  height: 70px;
+  background: #68ef3f;
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
+.shape-icon.hexagon {
+  width: 70px;
+  height: 70px;
+  background: #68ef3f;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+/* PROPER DIAMOND */
+
+.shape-icon.diamond {
+  width: 70px;
+  height: 70px;
+  background: #68ef3f;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.shape-icon.star {
+  width: auto;
+  height: auto;
+  background: transparent;
+  color: #68ef3f;
+  font-size: 75px;
+  line-height: 70px;
+}
+
+.shape-icon.broken-heart {
+  width: auto;
+  height: auto;
+  background: transparent;
+  font-size: 65px;
+}
+
+/* ================= STUDIO ================= */
+
+.studio-section {
+  padding: 110px 7%;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.studio-left h2 {
+  font-size: clamp(55px, 7vw, 90px);
+  line-height: 0.9;
+  letter-spacing: -5px;
+  margin-bottom: 30px;
+}
+
+.studio-description {
+  color: #aab7ad;
+  line-height: 1.7;
+  max-width: 400px;
+}
+
+.selected-info {
+  margin-top: 45px;
+}
+
+.selected-info span {
+  color: #68ef3f;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.selected-info h3 {
+  font-size: 25px;
+  margin-top: 8px;
+}
+
+/* ================= STUDIO CARD ================= */
+
+.studio-card {
+  background: #102318;
+  border-radius: 30px;
+  padding: 30px;
+  border: 1px solid #203b28;
+}
+
+.preview-area {
+  height: 330px;
+  background: #07140c;
+  border-radius: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* ================= STUDIO PREVIEW ================= */
+
+/* Circle */
+
+.preview-shape.circle {
+  width: 180px;
+  height: 180px;
+  background: #68ef3f;
+  border-radius: 50%;
+}
+
+/* Triangle */
+
+.preview-shape.triangle {
+  width: 0;
+  height: 0;
+  background: transparent;
+  border-left: 90px solid transparent;
+  border-right: 90px solid transparent;
+  border-bottom: 160px solid #68ef3f;
+}
+
+/* Square */
+
+.preview-shape.square {
+  width: 180px;
+  height: 180px;
+  background: #68ef3f;
+  border-radius: 12px;
+}
+
+/* Rectangle */
+
+.preview-shape.rectangle {
+  width: 240px;
+  height: 150px;
+  background: #68ef3f;
+  border-radius: 12px;
+}
+
+/* Pentagon */
+
+.preview-shape.pentagon {
+  width: 180px;
+  height: 180px;
+  background: #68ef3f;
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
+/* Hexagon */
+
+.preview-shape.hexagon {
+  width: 180px;
+  height: 180px;
+  background: #68ef3f;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+/* PROPER DIAMOND */
+
+.preview-shape.diamond {
+  width: 180px;
+  height: 180px;
+  background: #68ef3f;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+/* STAR */
+
+.preview-shape.star {
+  width: auto;
+  height: auto;
+  background: transparent;
+  color: #68ef3f;
+  font-size: 180px;
+  line-height: 1;
+}
+
+/* RED HEART */
+
+.preview-shape.heart {
+  width: auto;
+  height: auto;
+  background: transparent;
+  color: red;
+  font-size: 180px;
+  line-height: 1;
+}
+
+/* ================= CONTROLS ================= */
+
+.controls {
+  margin-top: 30px;
+  display: grid;
+  gap: 20px;
+}
+
+.control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.control label {
+  color: #c5d0c8;
+  font-size: 14px;
+}
+
+.control input[type="range"] {
+  width: 55%;
+  accent-color: #68ef3f;
+}
+
+.control input[type="color"] {
+  width: 55px;
+  height: 35px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================= BUTTONS ================= */
+
+.studio-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.studio-buttons button {
+  border: none;
+  padding: 12px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.morph-btn {
+  background: #68ef3f;
+  color: #07140c;
+}
+
+.random-btn {
+  background: white;
+  color: #102318;
+}
+
+.reset-btn {
+  background: #26372b;
+  color: white;
+}
+
+/* ================= MORPH ================= */
+
+.morph-animation {
+  animation: morph 0.6s ease;
+}
+
+@keyframes morph {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ================= HEART SECTION ================= */
+
+.heart-section {
+  background: #eef5e9;
+  color: #102318;
+  padding: 110px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heart-content {
+  max-width: 600px;
+}
+
+.heart-content h2 {
+  font-size: clamp(50px, 7vw, 85px);
+  line-height: 0.92;
+  letter-spacing: -5px;
+  margin-bottom: 25px;
+}
+
+.heart-content p:not(.small-title) {
+  color: #607064;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.heart-btn {
+  background: #102318;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.heart-display {
+  width: 350px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.broken-heart-large {
+  font-size: 200px;
+  transition: 0.5s;
+}
+
+.broken-heart-large.healed {
+  transform: scale(1.15);
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+  padding: 40px 7%;
+  background: #07140c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+footer p {
+  color: #829087;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 60px;
+  }
+
+  .hero-shape {
+    align-self: center;
+  }
+
+  .shape-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .studio-section {
+    grid-template-columns: 1fr;
+  }
+
+  .heart-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 20px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero,
+  .shape-section,
+  .studio-section,
+  .heart-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero h1 {
+    letter-spacing: -4px;
+  }
+
+  .shape-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .studio-card {
+    padding: 18px;
+  }
+
+  .preview-area {
+    height: 260px;
+  }
+
+  .studio-buttons {
+    flex-wrap: wrap;
+  }
+
+  .heart-display {
+    width: 100%;
+    height: 250px;
+  }
+
+  footer {
+    padding: 30px 20px;
+  }
+}
